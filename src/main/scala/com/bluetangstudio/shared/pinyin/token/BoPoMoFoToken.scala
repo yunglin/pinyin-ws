@@ -1,13 +1,14 @@
 package com.bluetangstudio.shared.pinyin.token
 
-import com.bluetangstudio.shared.pinyin.{ OutputFormat, TongYongTable, WadegilesTable };
-
+import com.bluetangstudio.shared.pinyin.OutputFormat;
+import com.bluetangstudio.shared.pinyin.romanization._;
+    
 case class BoPoMoFoToken(val sound: String, val tone: Int) extends ParsedToken {
   
     def toString(format: OutputFormat): String = {
         val withTone = (format & OutputFormat.WITH_TONE_NUMBER) == OutputFormat.WITH_TONE_NUMBER;
 
-        var mappingTable: { def lookup(sound: String): String } = TongYongTable;
+        var mappingTable: RomanizationTable = TongYongTable;
         if ((format & OutputFormat.WADEGILES_PINYIN) == OutputFormat.WADEGILES_PINYIN) {
             mappingTable = WadegilesTable;
         }

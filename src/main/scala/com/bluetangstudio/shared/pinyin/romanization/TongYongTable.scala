@@ -1,8 +1,10 @@
-package com.bluetangstudio.shared.pinyin
+package com.bluetangstudio.shared.pinyin.romanization
 
-object TongYongTable {
+object TongYongTable extends RomanizationTable  {
 
-    val Table = Map(
+    override def table = dataTable;
+
+    val dataTable = Map(
         "a8" -> "ba",
         "ai" -> "bo",
         "a9" -> "bai",
@@ -412,12 +414,4 @@ object TongYongTable {
         "mp" -> "yun",
         "m/" -> "yong"
         );
-
-    def lookup(sound: String): String = {
-        val ret = Table.get(sound);
-        if (ret == None) {
-            return sound;
-        }
-        return ret.get;
-    }
 }
