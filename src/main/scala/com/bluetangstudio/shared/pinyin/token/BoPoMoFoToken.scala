@@ -30,6 +30,7 @@ object BoPoMoFoToken {
             case '4' => tone = 4;
             case '6' => tone = 2;
             case '7' => tone = -1;
+            case _ => ;
         }
         if (tone != 0)
             return new BoPoMoFoToken(in.substring(0, in.length - 1), tone);

@@ -17,6 +17,12 @@ object PinyinHelper {
         tokens.map(_.toString(OutputFormat.TONGYONG_PINYIN)).mkString(" ");
     }
 
+    def toWadegiles(input: String): String = {
+        val tokens = translator.tokenize(input);
+        tokens.map(_.toString(OutputFormat.WADEGILES_PINYIN)).mkString(" ");
+    }
+
+
     def main(args: Array[String]) {
         if (args.length > 0) {
             println(PinyinHelper.toTongYong(args.mkString(" ")));       

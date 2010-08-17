@@ -4,9 +4,12 @@
     <groupId>com.bluetangstudio.shared</groupId>
     <artifactId>pinyin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
-        <scala.version>2.8.0</scala.version>
+      <scala.version>2.8.0</scala.version>
+      <tapestry.version>5.2.0</tapestry.version>
+      <jersey.version>1.4-ea01</jersey.version>
     </properties>
 
     <repositories>
@@ -36,12 +39,57 @@
             <version>${scala.version}</version>
         </dependency>
         <dependency>
+          <groupId>org.apache.tapestry</groupId>
+          <artifactId>tapestry-core</artifactId>
+          <version>${tapestry.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>com.sun.jersey</groupId>
+          <artifactId>jersey-server</artifactId>
+          <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>com.sun.jersey</groupId>
+          <artifactId>jersey-json</artifactId>
+          <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-core-asl</artifactId>
+          <version>1.5.5</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-asl</artifactId>
+          <version>1.5.5</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-jaxrs</artifactId>
+          <version>1.5.5</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-xc</artifactId>
+          <version>1.5.5</version>
+        </dependency>
+        <dependency>
+          <groupId>com.bluetangstudio</groupId>
+          <artifactId>tapestry-jersey</artifactId>
+          <version>1.0.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>2.5</version>
+          <scope>provided</scope>
+        </dependency>        
+        <dependency>
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest</artifactId>
             <version>1.2.1-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -95,6 +143,15 @@
                     </classpathContainers>
                 </configuration>
             </plugin>
+            <plugin>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>maven-jetty-plugin</artifactId>
+              <version>6.1.10</version>
+              <configuration>
+                <contextPath>/</contextPath>
+                <scanIntervalSeconds>1</scanIntervalSeconds>
+              </configuration>
+            </plugin>            
         </plugins>
     </build>
     <reporting>
