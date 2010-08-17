@@ -1,0 +1,17 @@
+The goal of this project is to provide a web-service to convert chinese characters into chinese romanization.
+As many of you have already known, chinese language is a character based language. Each character can have multiple
+pronunciation, in one context, it is read in on way, in another context, the same character is read in another way.
+Currently, this service just ignore this and pick one sound randomly. I am planning to fix this by introducing
+context/PhraseTable to this service. But I don't have time now, I may fix it in (not so) near future.
+
+For actual deployment, please check: http://pinyin-ws.appspot.com
+
+本專案的目標是提供一個中文字轉中文拼音的 web-service。目前本專案不支援破音字，在(遙遠)的將來，我將會把破音字表加入此專案。
+本專案目前以發佈至 http://pinyin-ws.appspot.com
+
+
+ben jhuan an de mu biao shih di gong yi ge jhong wun zih jhuan jhong wun pin yin de  web-service?
+mu cian ben jhuan an fu jhih yuan po yin zih ? zai ( yao yuan ) de jiang lai ?
+wo jiang huei bai po yin zih biao jia ru cih jhuan an ?
+
+ben jhuan an mu cian yi fa 1j jhih  http://pinyin-ws.appspot.com
